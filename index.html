@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ntahien Tech — Thiết kế website, app & tự động hoá AI</title>
+  <meta name="description" content="Ntahien Tech — Nguyễn Thế An thiết kế website doanh nghiệp, website bán hàng, landing page, ứng dụng di động và tự động hoá AI. Bàn giao 100% mã nguồn, demo mỗi tuần, bảo hành 12 tháng." />
+  <meta name="theme-color" content="#0a1714" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ntahien Tech — Từ ý tưởng đến sản phẩm chạy thật" />
+  <meta property="og:description" content="Website, app và tự động hoá AI cho cửa hàng, doanh nghiệp nhỏ và startup. Bàn giao 100% mã nguồn." />
+  <meta property="og:url" content="https://ntahientech.com/" />
+  <meta property="og:image" content="https://ntahientech.com/assets/img/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://ntahientech.com/" />
+  <meta property="og:locale" content="vi_VN" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css?v=3" />
+  <script>
+    /* Áp dụng giao diện sáng/tối trước khi vẽ trang để không bị nháy */
+    (function () { try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {} })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Ntahien Tech",
+    "url": "https://ntahientech.com/",
+    "image": "https://ntahientech.com/assets/img/og.jpg",
+    "description": "Thiết kế website, ứng dụng di động và tự động hoá AI",
+    "founder": { "@type": "Person", "name": "Nguyễn Thế An", "sameAs": "https://github.com/nguyenthean38" },
+    "telephone": "+84982269974",
+    "email": "ann079771@gmail.com",
+    "areaServed": "VN",
+    "address": { "@type": "PostalAddress", "addressLocality": "Hồ Chí Minh", "addressCountry": "VN" }
+  }
+  </script>
+</head>
+<body>
+  <!-- Bộ biểu tượng dùng chung -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-arrow-ur" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></symbol>
+      <symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+      <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></symbol>
+      <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+      <symbol id="i-dashboard" viewBox="0 0 24 24"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></symbol>
+      <symbol id="i-phone-dev" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
+      <symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+      <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></symbol>
+      <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.06 12.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.88 0"/><circle cx="12" cy="12" r="3"/></symbol>
+      <symbol id="i-headset" viewBox="0 0 24 24"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"/><path d="M21 16v2a4 4 0 0 1-4 4h-5"/></symbol>
+      <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.13-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.13a.5.5 0 0 1 .96 0L14.06 8.5A2 2 0 0 0 15.5 9.94l6.13 1.58a.5.5 0 0 1 0 .96L15.5 14.06a2 2 0 0 0-1.44 1.44l-1.58 6.13a.5.5 0 0 1-.96 0z"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+      <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+      <symbol id="i-chev-l" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+      <symbol id="i-chev-r" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></symbol>
+      <symbol id="i-zap" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></symbol>
+      <symbol id="i-trend" viewBox="0 0 24 24"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path d="M16 7h6v6"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><path d="M14.54 21.69a.5.5 0 0 0 .94-.03l6.5-19a.5.5 0 0 0-.64-.63l-19 6.5a.5.5 0 0 0-.02.93l7.93 3.18a2 2 0 0 1 1.11 1.11z"/><path d="m21.85 2.15-10.94 10.94"/></symbol>
+      <symbol id="i-msg" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8M16 13H8M16 17H8"/></symbol>
+      <symbol id="i-pen" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.38 3.62a1 1 0 0 1 3 3L7.37 18.64a2 2 0 0 1-.85.5l-2.87.84a.5.5 0 0 1-.62-.62l.84-2.87a2 2 0 0 1 .5-.85z"/></symbol>
+      <symbol id="i-calc" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M8 6h8M16 14v4M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01"/></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24"><path stroke="none" fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></symbol>
+      <symbol id="i-zalo" viewBox="0 0 24 24"><rect x="1.5" y="3" width="21" height="18" rx="6" fill="currentColor" stroke="none"/><text x="12" y="15.2" text-anchor="middle" font-family="Arial, sans-serif" font-size="7.4" font-weight="700" stroke="none" style="fill:var(--zt,#fff)">Zalo</text></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip" href="#main">Bỏ qua đến nội dung</a>
+
+  <!-- Màn hình tải -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <div class="loader__logo"><svg viewBox="0 0 40 40"><use href="#logo-mark"/></svg></div>
+      <div class="loader__count"><span id="loaderNum">0</span>%</div>
+      <div class="loader__bar"><span id="loaderBar"></span></div>
+      <div class="loader__text">Đang chuẩn bị không gian làm việc…</div>
+    </div>
+  </div>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="lg-brand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1dbf73"/><stop offset="1" stop-color="#0ea5e9"/></linearGradient>
+      <symbol id="logo-mark" viewBox="0 0 40 40"><rect width="40" height="40" rx="12" fill="url(#lg-brand)"/><path d="M12.5 28.5v-17l15 17v-17" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="30.5" cy="10" r="3" fill="#d4f970"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- Hiệu ứng con trỏ -->
+  <canvas class="fx-field" id="fxField" aria-hidden="true"></canvas>
+  <div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__label" id="cursorLabel"></span></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="sparkles" id="sparkles" aria-hidden="true"></div>
+
+  <!-- Thanh điều hướng -->
+  <header class="nav" id="nav">
+    <div class="nav__wrap">
+      <a href="#top" class="brand" aria-label="Ntahien Tech — về đầu trang">
+        <svg class="brand__mark" viewBox="0 0 40 40"><use href="#logo-mark"/></svg>
+        <span class="brand__name">Ntahien<b>Tech</b></span>
+      </a>
+      <nav class="nav__links" aria-label="Điều hướng chính">
+        <a href="#dich-vu">Dịch vụ</a>
+        <a href="#du-an">Dự án</a>
+        <a href="#quy-trinh">Quy trình</a>
+        <a href="#bang-gia">Bảng giá</a>
+        <a href="#gioi-thieu">Về tôi</a>
+        <a href="#faq">Hỏi đáp</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="Đổi giao diện sáng / tối">
+          <svg class="ico ico--sun"><use href="#i-sun"/></svg>
+          <svg class="ico ico--moon"><use href="#i-moon"/></svg>
+        </button>
+        <a class="btn btn--brand btn--sm nav__cta" href="#lien-he" data-magnetic>
+          <svg class="ico"><use href="#i-zalo"/></svg><span>Liên hệ ngay</span>
+        </a>
+        <button class="burger" id="burger" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav__progress"><span id="navProgress"></span></div>
+  </header>
+
+  <!-- Menu toàn màn hình -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <div class="menu__bg"></div>
+    <div class="menu__inner">
+      <nav class="menu__links" aria-label="Menu">
+        <a href="#dich-vu"><i>01</i>Dịch vụ</a>
+        <a href="#du-an"><i>02</i>Dự án</a>
+        <a href="#quy-trinh"><i>03</i>Quy trình</a>
+        <a href="#bang-gia"><i>04</i>Bảng giá</a>
+        <a href="#uoc-tinh"><i>05</i>Ước tính chi phí</a>
+        <a href="#gioi-thieu"><i>06</i>Về tôi</a>
+        <a href="#lien-he"><i>07</i>Liên hệ</a>
+      </nav>
+      <div class="menu__side">
+        <p class="eyebrow">Liên hệ trực tiếp</p>
+        <a class="menu__big" href="tel:0982269974">0982 269 974</a>
+        <a class="menu__mail" href="mailto:ann079771@gmail.com">ann079771@gmail.com</a>
+        <p class="menu__note">Phản hồi trong 24 giờ, kể cả cuối tuần.</p>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="top">
+      <div class="hero__grid-bg" aria-hidden="true"></div>
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__left">
+          <p class="eyebrow eyebrow--line" data-reveal><span class="slash">/</span> Website · App · Tự động hoá AI</p>
+          <h1 class="hero__title">
+            <span class="line"><span data-split>TỪ Ý TƯỞNG</span></span>
+            <span class="line"><span data-split>ĐẾN</span> <mark class="hl"><span data-split>SẢN PHẨM</span></mark></span>
+            <span class="line line--script"><span class="grad-text" data-split>chạy thật, ra khách.</span></span>
+          </h1>
+          <div class="hero__ctas" data-reveal style="--d:.5s">
+            <a class="btn btn--dark btn--lg" href="https://zalo.me/0982269974" target="_blank" rel="noopener" data-magnetic>
+              <svg class="ico ico--zalo"><use href="#i-zalo"/></svg>
+              <span>Trao đổi về dự án</span>
+              <span class="btn__arrow"><svg class="ico"><use href="#i-arrow-ur"/></svg></span>
+            </a>
+            <a class="link-under" href="#du-an">Xem dự án đã làm <svg class="ico"><use href="#i-arrow-ur"/></svg></a>
+          </div>
+        </div>
+        <div class="hero__right">
+          <p class="hero__lead" data-reveal style="--d:.35s">
+            Tôi là <strong>Nguyễn Thế An</strong> — kỹ sư phần mềm. Tôi thiết kế và lập trình <strong>website, ứng dụng di động và hệ thống tự động hoá bằng AI</strong> cho cửa hàng, doanh nghiệp nhỏ và startup. Anh chị làm việc trực tiếp với người viết code, có demo mỗi tuần và sở hữu 100% sản phẩm.
+          </p>
+          <div class="hero__stats" data-reveal style="--d:.45s">
+            <div class="stat"><b><span data-count="9">0</span>+</b><span>sản phẩm đã hoàn thiện, có demo thật</span></div>
+            <div class="stat"><b><span data-count="350">0</span>+</b><span>bài kiểm thử tự động trong các dự án</span></div>
+            <div class="stat"><b><span data-count="100">0</span>%</b><span>mã nguồn, tên miền đứng tên khách hàng</span></div>
+            <div class="stat"><b><span data-count="24">0</span>h</b><span>thời gian phản hồi tối đa</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__tags" data-reveal style="--d:.6s">
+        <span>Website doanh nghiệp</span><span>Website bán hàng</span><span>Landing page</span><span>Web app quản lý</span><span>App iOS / Android</span><span>Chatbot AI</span><span>Tự động hoá n8n</span>
+      </div>
+      <div class="showcase" aria-label="Một số giao diện đã thực hiện">
+        <div class="showcase__track" id="showcaseTrack"></div>
+      </div>
+    </section>
+
+    <!-- ================= MARQUEE ================= -->
+    <section class="ticker" aria-hidden="true">
+      <div class="ticker__row">
+        <div class="ticker__move">
+          <span>Thiết kế riêng</span><i>✦</i><span>Demo mỗi tuần</span><i>✦</i><span>Bàn giao 100% mã nguồn</span><i>✦</i><span>Chuẩn SEO</span><i>✦</i><span>Nhanh trên điện thoại</span><i>✦</i><span>Bảo hành 12 tháng</span><i>✦</i>
+          <span>Thiết kế riêng</span><i>✦</i><span>Demo mỗi tuần</span><i>✦</i><span>Bàn giao 100% mã nguồn</span><i>✦</i><span>Chuẩn SEO</span><i>✦</i><span>Nhanh trên điện thoại</span><i>✦</i><span>Bảo hành 12 tháng</span><i>✦</i>
+        </div>
+      </div>
+      <div class="ticker__row ticker__row--alt">
+        <div class="ticker__move ticker__move--rev">
+          <span>Website</span><i>●</i><span>Web bán hàng</span><i>●</i><span>App di động</span><i>●</i><span>Chatbot AI</span><i>●</i><span>Tự động hoá</span><i>●</i><span>Trang quản trị tiếng Việt</span><i>●</i>
+          <span>Website</span><i>●</i><span>Web bán hàng</span><i>●</i><span>App di động</span><i>●</i><span>Chatbot AI</span><i>●</i><span>Tự động hoá</span><i>●</i><span>Trang quản trị tiếng Việt</span><i>●</i>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= VÌ SAO ================= -->
+    <section class="why" id="vi-sao">
+      <div class="container why__inner">
+        <div class="why__sticky">
+          <p class="eyebrow"><span class="num">01</span> Vì sao chọn Ntahien Tech</p>
+          <h2 class="h2" data-reveal>Làm web <em>để có,</em><br />hay làm web <mark class="hl">để bán được?</mark></h2>
+          <p class="lead" data-reveal>Nhiều website được làm vội: đẹp hôm bàn giao, rồi chậm dần, lỗi không ai sửa, chủ shop không tự đổi được giá. Tôi làm khác — bắt đầu từ việc kinh doanh của anh chị.</p>
+          <div class="compare" data-reveal>
+            <div class="compare__col compare__col--bad">
+              <p class="compare__head">Làm vội</p>
+              <ul><li>Dùng giao diện mẫu, giống hàng trăm web khác</li><li>Không có trang quản trị, sửa gì cũng phải nhờ</li><li>Không giữ mã nguồn, khó đổi người làm</li></ul>
+            </div>
+            <div class="compare__col compare__col--good">
+              <p class="compare__head">Ntahien Tech</p>
+              <ul><li>Thiết kế riêng theo khách hàng của anh chị</li><li>Quản trị tiếng Việt, tự đổi giá, đăng bài</li><li>Bàn giao trọn vẹn, kiểm thử tự động</li></ul>
+            </div>
+          </div>
+        </div>
+        <div class="stack">
+          <article class="stack__card" style="--i:0">
+            <div class="stack__num">01</div>
+            <div class="stack__body">
+              <div class="stack__icon"><svg class="ico"><use href="#i-eye"/></svg></div>
+              <h3>Hiểu việc kinh doanh trước khi viết code</h3>
+              <p>Khách của anh chị là ai, họ tìm gì, vì sao họ chọn đối thủ? Mỗi trang, mỗi nút bấm đều phục vụ một mục tiêu: khách gọi điện, nhắn Zalo hoặc đặt hàng.</p>
+              <div class="stack__chips"><span>Khảo sát miễn phí</span><span>Phân tích đối thủ</span><span>Hành trình mua hàng</span></div>
+            </div>
+          </article>
+          <article class="stack__card" style="--i:1">
+            <div class="stack__num">02</div>
+            <div class="stack__body">
+              <div class="stack__icon"><svg class="ico"><use href="#i-zap"/></svg></div>
+              <h3>Đẹp, nhanh và mượt trên điện thoại</h3>
+              <p>Phần lớn khách xem web bằng điện thoại. Giao diện được thiết kế cho màn hình nhỏ trước, ảnh được nén chuẩn, trang mở trong vài giây kể cả mạng 4G yếu.</p>
+              <div class="stack__meter"><span>Tốc độ tải</span><div class="meter"><i style="--w:96%"></i></div><b>96</b></div>
+            </div>
+          </article>
+          <article class="stack__card" style="--i:2">
+            <div class="stack__num">03</div>
+            <div class="stack__body">
+              <div class="stack__icon"><svg class="ico"><use href="#i-pen"/></svg></div>
+              <h3>Anh chị tự quản lý được</h3>
+              <p>Trang quản trị bằng tiếng Việt: đổi giá, thêm sản phẩm, đăng bài, xem đơn hàng chỉ như soạn tin nhắn. Kèm video hướng dẫn quay riêng cho website của anh chị.</p>
+              <div class="stack__chips"><span>Không cần biết code</span><span>Phân quyền nhân viên</span><span>Video hướng dẫn</span></div>
+            </div>
+          </article>
+          <article class="stack__card" style="--i:3">
+            <div class="stack__num">04</div>
+            <div class="stack__body">
+              <div class="stack__icon"><svg class="ico"><use href="#i-shield"/></svg></div>
+              <h3>Bàn giao trọn vẹn, đồng hành lâu dài</h3>
+              <p>Tên miền, hosting, mã nguồn đứng tên anh chị. Mỗi dự án có kiểm thử tự động để hạn chế lỗi, bảo hành 12 tháng và có gói chăm sóc hằng tháng nếu cần.</p>
+              <div class="stack__chips"><span>100% mã nguồn</span><span>Bảo hành 12 tháng</span><span>Sao lưu định kỳ</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DỊCH VỤ ================= -->
+    <section class="services" id="dich-vu">
+      <div class="container">
+        <div class="sec-head">
+          <div>
+            <p class="eyebrow"><span class="num">02</span> Dịch vụ</p>
+            <h2 class="h2 h2--xl" data-reveal>MỘT NGƯỜI LÀM,<br /><span class="muted-ink">ĐỦ CẢ</span> <mark class="hl">WEB · APP · AI</mark></h2>
+          </div>
+          <p class="lead sec-head__aside" data-reveal>Không qua trung gian, không chuyển tay nhiều người. Từ giao diện, lập trình, máy chủ đến tự động hoá — anh chị chỉ cần làm việc với một đầu mối.</p>
+        </div>
+
+        <div class="svc-grid">
+          <article class="svc" data-tilt data-reveal>
+            <div class="svc__visual">
+              <div class="mock-browser">
+                <div class="mock-browser__bar"><i></i><i></i><i></i><span>cuahang-cua-anh-chi.vn</span></div>
+                <div class="mock-site">
+                  <div class="mock-site__nav"><b></b><span></span><span></span><span></span></div>
+                  <div class="mock-site__hero"><div><p class="w80"></p><p class="w60"></p><p class="w40 hl-line"></p><em>Liên hệ</em></div><div class="mock-site__img"></div></div>
+                  <div class="mock-site__cards"><span></span><span></span><span></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="svc__body">
+              <span class="svc__no">01</span>
+              <h3>Website doanh nghiệp</h3>
+              <p>Bộ mặt chính thức trên Google — khách tìm hiểu, tin tưởng rồi liên hệ.</p>
+              <div class="svc__foot"><span class="tag">Giới thiệu</span><span class="tag">Dịch vụ</span><span class="tag">Đặt lịch</span><span class="svc__ico"><svg class="ico"><use href="#i-globe"/></svg></span></div>
+            </div>
+          </article>
+
+          <article class="svc" data-tilt data-reveal style="--d:.08s">
+            <div class="svc__visual svc__visual--warm">
+              <div class="mock-shop">
+                <div class="mock-shop__top"><b>Shop của anh chị</b><span class="mock-shop__cart"><svg class="ico"><use href="#i-cart"/></svg><i id="cartCount">2</i></span></div>
+                <div class="mock-shop__grid">
+                  <div class="p" style="--c:#fda4af"><span></span><b>Áo linen</b><em>350k</em><button type="button" tabindex="-1">Thêm vào giỏ</button></div>
+                  <div class="p" style="--c:#fcd34d"><span></span><b>Balo da</b><em>420k</em><button type="button" tabindex="-1">Thêm vào giỏ</button></div>
+                  <div class="p" style="--c:#7dd3fc"><span></span><b>Đồng hồ</b><em>890k</em><button type="button" tabindex="-1">Thêm vào giỏ</button></div>
+                </div>
+              </div>
+            </div>
+            <div class="svc__body">
+              <span class="svc__no">02</span>
+              <h3>Website bán hàng</h3>
+              <p>Kênh bán đứng tên anh chị — thanh toán VietQR, quản lý đơn, không mất phí sàn.</p>
+              <div class="svc__foot"><span class="tag">Giỏ hàng</span><span class="tag">VietQR</span><span class="tag">Quản lý kho</span><span class="svc__ico"><svg class="ico"><use href="#i-cart"/></svg></span></div>
+            </div>
+          </article>
+
+          <article class="svc" data-tilt data-reveal style="--d:.16s">
+            <div class="svc__visual svc__visual--lime">
+              <div class="mock-landing">
+                <span class="mock-landing__badge">Ưu đãi hôm nay</span>
+                <p class="mock-landing__title">Giảm <b>30%</b> cho 50 khách đầu tiên</p>
+                <div class="mock-landing__count"><span><b>02</b>giờ</span><span><b>45</b>phút</span><span><b id="lpSec">18</b>giây</span></div>
+                <span class="mock-landing__cta">Đăng ký ngay →</span>
+              </div>
+            </div>
+            <div class="svc__body">
+              <span class="svc__no">03</span>
+              <h3>Landing page</h3>
+              <p>Một trang thuyết phục cho chiến dịch quảng cáo — tối ưu để khách để lại số điện thoại.</p>
+              <div class="svc__foot"><span class="tag">Quảng cáo</span><span class="tag">Form</span><span class="tag">Pixel</span><span class="svc__ico"><svg class="ico"><use href="#i-rocket"/></svg></span></div>
+            </div>
+          </article>
+
+          <article class="svc" data-tilt data-reveal>
+            <div class="svc__visual svc__visual--sky">
+              <div class="mock-dash">
+                <div class="mock-dash__head"><b>Báo cáo tháng này</b><span>Doanh thu ↑ 42%</span></div>
+                <div class="mock-dash__kpis"><div><small>Đơn hàng</small><b>128</b></div><div><small>Khách mới</small><b>64</b></div><div><small>Tỉ lệ chốt</small><b>8,2%</b></div></div>
+                <div class="mock-dash__bars"><i style="--h:40%"></i><i style="--h:55%"></i><i style="--h:48%"></i><i style="--h:66%"></i><i style="--h:60%"></i><i style="--h:78%"></i><i style="--h:72%"></i><i style="--h:92%"></i></div>
+              </div>
+            </div>
+            <div class="svc__body">
+              <span class="svc__no">04</span>
+              <h3>Web app &amp; phần mềm quản lý</h3>
+              <p>Quản lý đơn hàng, nhân sự, kho, lịch hẹn — thay cho file Excel rời rạc.</p>
+              <div class="svc__foot"><span class="tag">Dashboard</span><span class="tag">Phân quyền</span><span class="tag">Báo cáo</span><span class="svc__ico"><svg class="ico"><use href="#i-dashboard"/></svg></span></div>
+            </div>
+          </article>
+
+          <article class="svc" data-tilt data-reveal style="--d:.08s">
+            <div class="svc__visual svc__visual--mint">
+              <div class="mock-phones">
+                <div class="mock-phone"><img src="assets/img/projects/bepxanh-1.webp" alt="" loading="lazy" /></div>
+                <div class="mock-phone mock-phone--b"><img src="assets/img/projects/vietgig-1.webp" alt="" loading="lazy" /></div>
+              </div>
+            </div>
+            <div class="svc__body">
+              <span class="svc__no">05</span>
+              <h3>Ứng dụng di động</h3>
+              <p>App iOS và Android từ một mã nguồn — đặt hàng, đặt lịch, tích điểm thành viên.</p>
+              <div class="svc__foot"><span class="tag">Flutter</span><span class="tag">React Native</span><span class="tag">Firebase</span><span class="svc__ico"><svg class="ico"><use href="#i-phone-dev"/></svg></span></div>
+            </div>
+          </article>
+
+          <article class="svc" data-tilt data-reveal style="--d:.16s">
+            <div class="svc__visual svc__visual--violet">
+              <div class="mock-chat" id="mockChat">
+                <div class="b b--in">Shop còn size M áo linen trắng không ạ?</div>
+                <div class="b b--out">Dạ còn 3 chiếc ạ 💚 Anh chị muốn giao về đâu để em lên đơn luôn?</div>
+                <div class="b b--in">Giao về Quận 7 nhé</div>
+                <div class="b b--typing"><i></i><i></i><i></i></div>
+                <span class="mock-chat__tag"><svg class="ico"><use href="#i-sparkles"/></svg>Trả lời bởi AI · 2 giây</span>
+              </div>
+            </div>
+            <div class="svc__body">
+              <span class="svc__no">06</span>
+              <h3>AI &amp; tự động hoá</h3>
+              <p>Chatbot trả lời khách 24/7, tự báo đơn, tự làm báo cáo — tiết kiệm hàng giờ mỗi ngày.</p>
+              <div class="svc__foot"><span class="tag">ChatGPT · Claude</span><span class="tag">n8n</span><span class="tag">Telegram</span><span class="svc__ico"><svg class="ico"><use href="#i-bot"/></svg></span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DỰ ÁN ================= -->
+    <section class="projects" id="du-an">
+      <div class="container">
+        <div class="sec-head">
+          <div>
+            <p class="eyebrow"><span class="num">03</span> Dự án tiêu biểu</p>
+            <h2 class="h2 h2--xl" data-reveal>SẢN PHẨM <mark class="hl">CHẠY THẬT,</mark><br /><span class="muted-ink">KHÔNG PHẢI ẢNH MẪU</span></h2>
+          </div>
+          <p class="lead sec-head__aside" data-reveal>Mỗi dự án dưới đây đều có giao diện, dữ liệu và kiểm thử thật. Bấm vào để xem chi tiết tính năng, công nghệ và bản chạy trực tiếp.</p>
+        </div>
+        <div class="filters" role="tablist" aria-label="Lọc dự án" id="filters">
+          <button type="button" class="is-active" data-filter="all" role="tab" aria-selected="true">Tất cả <sup></sup></button>
+          <button type="button" data-filter="web" role="tab" aria-selected="false">Website <sup></sup></button>
+          <button type="button" data-filter="shop" role="tab" aria-selected="false">Bán hàng <sup></sup></button>
+          <button type="button" data-filter="app" role="tab" aria-selected="false">Web app <sup></sup></button>
+          <button type="button" data-filter="mobile" role="tab" aria-selected="false">App di động <sup></sup></button>
+          <button type="button" data-filter="ai" role="tab" aria-selected="false">AI &amp; tự động <sup></sup></button>
+        </div>
+        <div class="proj-grid" id="projGrid"></div>
+        <div class="projects__more" data-reveal>
+          <a class="btn btn--ghost" href="https://github.com/nguyenthean38" target="_blank" rel="noopener" data-magnetic>
+            <svg class="ico"><use href="#i-github"/></svg><span>Xem toàn bộ trên GitHub</span><svg class="ico"><use href="#i-arrow-ur"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= QUY TRÌNH (tối) ================= -->
+    <section class="process" id="quy-trinh">
+      <div class="process__bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="process__head">
+          <div>
+            <p class="eyebrow eyebrow--dark"><span class="num">04</span> Quy trình làm việc</p>
+            <h2 class="h2 h2--light" data-reveal>RÕ RÀNG. ĐÚNG HẸN. <em class="serif">Đồng hành.</em></h2>
+          </div>
+          <div class="process__meter" data-reveal>
+            <p>Mỗi bước đều có kết quả cụ thể để anh chị duyệt trước khi đi tiếp — không “mất tích” sau khi nhận cọc.</p>
+            <div class="process__counter"><span>BƯỚC</span><b id="stepNow">01</b><i>/</i><em>06</em><div class="process__bar"><span id="stepBar"></span></div></div>
+          </div>
+        </div>
+        <div class="process__body">
+          <ol class="steps" id="steps">
+            <li class="step is-active" data-step="0"><span class="step__no">01</span><div><h3>Trao đổi &amp; khảo sát <small>NGÀY 1</small></h3><p>Nghe mục tiêu, khách hàng, đối thủ. Tư vấn giải pháp phù hợp ngân sách — hoàn toàn miễn phí.</p></div></li>
+            <li class="step" data-step="1"><span class="step__no">02</span><div><h3>Báo giá &amp; kế hoạch <small>NGÀY 2</small></h3><p>Báo giá chi tiết từng hạng mục, mốc thời gian, hợp đồng rõ ràng. Không phát sinh chi phí ẩn.</p></div></li>
+            <li class="step" data-step="2"><span class="step__no">03</span><div><h3>Thiết kế giao diện <small>TUẦN 1</small></h3><p>Bản thiết kế trên máy tính và điện thoại theo thương hiệu, chỉnh đến khi anh chị ưng ý.</p></div></li>
+            <li class="step" data-step="3"><span class="step__no">04</span><div><h3>Lập trình &amp; demo hằng tuần <small>TUẦN 2 – 3</small></h3><p>Link demo chạy thật để anh chị bấm thử. Kiểm thử tự động sau mỗi thay đổi.</p></div></li>
+            <li class="step" data-step="4"><span class="step__no">05</span><div><h3>Bàn giao &amp; hướng dẫn <small>TUẦN 4</small></h3><p>Lên tên miền, cài SSL, Google Search Console. Bàn giao mã nguồn, tài khoản, video hướng dẫn.</p></div></li>
+            <li class="step" data-step="5"><span class="step__no">06</span><div><h3>Đồng hành sau ra mắt <small>MỖI THÁNG</small></h3><p>Sao lưu, theo dõi, sửa lỗi, cập nhật nội dung và báo cáo số liệu hằng tháng.</p></div></li>
+          </ol>
+          <div class="console" aria-live="polite">
+            <div class="console__head"><span class="dot"></span><span id="consoleTitle">ĐANG CHẠY · NGÀY 1</span><b id="consoleNo">01/06</b></div>
+            <div class="console__screen">
+              <div class="console__top"><span><svg class="ico"><use href="#i-sparkles"/></svg> Dự án của anh chị</span><em><i></i>Đang tiến hành</em></div>
+              <div class="console__main">
+                <div class="radar">
+                  <svg viewBox="0 0 200 200" aria-hidden="true">
+                    <circle cx="100" cy="100" r="92" /><circle cx="100" cy="100" r="64" /><circle cx="100" cy="100" r="36" />
+                    <path d="M100 8v184M8 100h184" />
+                  </svg>
+                  <div class="radar__sweep"></div>
+                  <div class="radar__core"><svg class="ico" id="consoleIcon"><use href="#i-msg"/></svg></div>
+                  <i class="radar__blip" style="--x:30%;--y:28%"></i><i class="radar__blip" style="--x:72%;--y:64%;--dl:1.2s"></i>
+                </div>
+                <ul class="console__list" id="consoleList"></ul>
+              </div>
+              <div class="console__log"><span>Nhật ký tiến độ</span><span id="consolePct">0%</span></div>
+              <div class="console__ticks" id="consoleTicks"></div>
+            </div>
+          </div>
+        </div>
+        <div class="process__cta" data-reveal>
+          <a class="btn btn--brand btn--lg" href="#lien-he" data-magnetic><svg class="ico"><use href="#i-zalo"/></svg><span>Bắt đầu bước 01 — miễn phí</span></a>
+          <a class="btn btn--outline-light btn--lg" href="tel:0982269974" data-magnetic><svg class="ico"><use href="#i-phone"/></svg><span>0982 269 974</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BẢNG GIÁ ================= -->
+    <section class="pricing" id="bang-gia">
+      <div class="container">
+        <div class="sec-head sec-head--center">
+          <p class="eyebrow"><span class="num">05</span> Bảng giá tham khảo</p>
+          <h2 class="h2 h2--xl" data-reveal>LÀM MỘT LẦN, <mark class="hl">DÙNG LÂU DÀI</mark></h2>
+          <p class="lead" data-reveal>Giá trọn gói đã gồm thiết kế, lập trình và đưa website lên mạng. Báo giá chính xác sau buổi trao đổi miễn phí.</p>
+          <div class="seg" id="priceSeg" role="tablist" aria-label="Loại gói">
+            <button type="button" class="is-active" data-plan="build" role="tab" aria-selected="true">Làm mới</button>
+            <button type="button" data-plan="care" role="tab" aria-selected="false">Chăm sóc hằng tháng</button>
+            <span class="seg__pill" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="price-grid" id="priceGrid"></div>
+        <p class="pricing__note">* Giá chưa gồm tên miền và hosting (khoảng 300.000 – 3.000.000đ/năm tuỳ loại). Thanh toán 3 đợt 30% – 40% – 30%.</p>
+      </div>
+    </section>
+
+    <!-- ================= ƯỚC TÍNH ================= -->
+    <section class="estimate" id="uoc-tinh">
+      <div class="container estimate__inner">
+        <div class="estimate__intro">
+          <p class="eyebrow"><span class="num">06</span> Ước tính chi phí</p>
+          <h2 class="h2" data-reveal>Tự ước tính <mark class="hl">trong 30 giây</mark></h2>
+          <p class="lead" data-reveal>Chọn loại sản phẩm và tính năng anh chị cần, con số sẽ hiện ngay. Gửi cấu hình cho tôi để nhận báo giá chính xác.</p>
+          <ul class="ticks">
+            <li><svg class="ico"><use href="#i-check"/></svg>Không cần để lại thông tin để xem giá</li>
+            <li><svg class="ico"><use href="#i-check"/></svg>Báo giá chi tiết từng hạng mục sau khi trao đổi</li>
+            <li><svg class="ico"><use href="#i-check"/></svg>Có phương án tiết kiệm nếu ngân sách hạn chế</li>
+          </ul>
+        </div>
+        <form class="calc" id="calc" data-reveal onsubmit="return false">
+          <fieldset>
+            <legend>1. Anh chị cần làm gì?</legend>
+            <div class="calc__types" id="calcTypes"></div>
+          </fieldset>
+          <fieldset>
+            <legend>2. Số trang / màn hình <b id="pagesOut">6</b></legend>
+            <input type="range" min="1" max="30" value="6" id="pages" aria-label="Số trang" />
+          </fieldset>
+          <fieldset>
+            <legend>3. Tính năng thêm</legend>
+            <div class="calc__addons" id="calcAddons"></div>
+          </fieldset>
+          <label class="switch"><input type="checkbox" id="rush" /><span class="switch__ui"></span><span>Cần gấp (rút ngắn 30% thời gian, +20% chi phí)</span></label>
+          <div class="calc__result">
+            <div>
+              <small>Chi phí dự kiến</small>
+              <p class="calc__price"><span id="calcLow">0</span> – <span id="calcHigh">0</span> <em>đ</em></p>
+              <small id="calcTime">Thời gian: —</small>
+            </div>
+            <button type="button" class="btn btn--dark" id="calcSend" data-magnetic><span>Gửi cấu hình này</span><svg class="ico"><use href="#i-send"/></svg></button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ================= VỀ TÔI ================= -->
+    <section class="about" id="gioi-thieu">
+      <div class="container about__inner">
+        <div class="about__photo" data-reveal>
+          <div class="about__frame">
+            <img src="assets/img/avatar.webp" alt="Nguyễn Thế An" width="600" height="600" loading="lazy" />
+          </div>
+          <span class="badge-float badge-float--a"><svg class="ico"><use href="#i-code"/></svg>Kỹ thuật phần mềm · TDTU</span>
+          <span class="badge-float badge-float--b"><i class="live"></i>Đang nhận dự án mới</span>
+          <span class="badge-float badge-float--c"><b>350+</b> bài test tự động</span>
+        </div>
+        <div class="about__text">
+          <p class="eyebrow"><span class="num">07</span> Về tôi</p>
+          <h2 class="h2 about__hello" data-reveal>Xin chào, tôi là <span class="grad-text" style="white-space:nowrap">Thế An</span></h2>
+          <p class="about__role" data-reveal>Tôi làm <span class="typing" id="typing">website bán hàng</span><span class="caret"></span></p>
+          <p class="lead" data-reveal>Sinh viên năm cuối ngành Kỹ thuật phần mềm, Đại học Tôn Đức Thắng. Tôi đã tự tay làm từ website tiệm nail, cửa hàng online, ứng dụng đầu tư chứng khoán đến app đi chợ có trợ lý AI — và một dự án tự động hoá giao việc cho doanh nghiệp nhỏ.</p>
+          <blockquote class="quote" data-reveal>
+            “Tự động hoá việc lặp lại. Xây thứ mà người ta thực sự dùng.”
+            <cite>— Nguyên tắc làm việc của tôi</cite>
+          </blockquote>
+          <div class="about__facts" data-reveal>
+            <div><b>Nhanh</b><span>Demo đầu tiên trong tuần đầu</span></div>
+            <div><b>Rõ</b><span>Báo giá, tiến độ minh bạch</span></div>
+            <div><b>Bền</b><span>Có kiểm thử, có bảo hành</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="stack-marquee" aria-label="Công nghệ sử dụng">
+        <div class="stack-marquee__move" id="techMarquee"></div>
+      </div>
+    </section>
+
+    <!-- ================= CAM KẾT ================= -->
+    <section class="promise" id="cam-ket">
+      <div class="container">
+        <div class="sec-head sec-head--center">
+          <p class="eyebrow"><span class="num">08</span> Cam kết</p>
+          <h2 class="h2" data-reveal>6 điều anh chị <mark class="hl">luôn nhận được</mark></h2>
+        </div>
+        <div class="promise__grid">
+          <div class="pcard" data-tilt data-reveal><span class="pcard__ico"><svg class="ico"><use href="#i-code"/></svg></span><h3>100% mã nguồn</h3><p>Tên miền, hosting, mã nguồn và tài khoản đều đứng tên anh chị.</p></div>
+          <div class="pcard" data-tilt data-reveal style="--d:.06s"><span class="pcard__ico"><svg class="ico"><use href="#i-shield"/></svg></span><h3>Bảo hành 12 tháng</h3><p>Lỗi kỹ thuật do tôi gây ra được sửa miễn phí, nhanh chóng.</p></div>
+          <div class="pcard" data-tilt data-reveal style="--d:.12s"><span class="pcard__ico"><svg class="ico"><use href="#i-wallet"/></svg></span><h3>Trả theo giai đoạn</h3><p>30% – 40% – 30%. Thấy sản phẩm thật rồi mới thanh toán tiếp.</p></div>
+          <div class="pcard" data-tilt data-reveal><span class="pcard__ico"><svg class="ico"><use href="#i-eye"/></svg></span><h3>Demo mỗi tuần</h3><p>Link chạy thật để bấm thử, góp ý trực tiếp, không chờ đến cuối.</p></div>
+          <div class="pcard" data-tilt data-reveal style="--d:.06s"><span class="pcard__ico"><svg class="ico"><use href="#i-headset"/></svg></span><h3>Phản hồi trong 24h</h3><p>Qua Zalo hoặc điện thoại, kể cả cuối tuần và ngày lễ.</p></div>
+          <div class="pcard" data-tilt data-reveal style="--d:.12s"><span class="pcard__ico"><svg class="ico"><use href="#i-file"/></svg></span><h3>Không chi phí ẩn</h3><p>Báo giá ghi rõ từng hạng mục. Phát sinh chỉ khi anh chị đồng ý.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="faq" id="faq">
+      <div class="container faq__inner">
+        <div class="faq__intro">
+          <p class="eyebrow"><span class="num">09</span> Hỏi đáp</p>
+          <h2 class="h2" data-reveal>Câu hỏi <mark class="hl">thường gặp</mark></h2>
+          <p class="lead" data-reveal>Chưa thấy câu trả lời anh chị cần? Nhắn Zalo cho tôi, thường chỉ vài phút là có phản hồi.</p>
+          <a class="btn btn--dark" href="https://zalo.me/0982269974" target="_blank" rel="noopener" data-magnetic><svg class="ico ico--zalo"><use href="#i-zalo"/></svg><span>Hỏi qua Zalo</span></a>
+        </div>
+        <div class="faq__list" id="faqList"></div>
+      </div>
+    </section>
+
+    <!-- ================= LIÊN HỆ ================= -->
+    <section class="contact" id="lien-he">
+      <div class="container">
+        <div class="contact__card">
+          <div class="contact__glow" aria-hidden="true"></div>
+          <div class="contact__left">
+            <p class="eyebrow eyebrow--dark"><span class="num">10</span> Bắt đầu dự án</p>
+            <h2 class="h2 h2--light" data-reveal>Kể tôi nghe <br /><em class="serif">ý tưởng</em> của anh chị.</h2>
+            <p class="contact__lead">Buổi trao đổi đầu tiên luôn miễn phí. Anh chị nhận được tư vấn giải pháp và báo giá chi tiết trong vòng 24 giờ.</p>
+            <ul class="contact__list">
+              <li><a href="https://zalo.me/0982269974" target="_blank" rel="noopener"><span class="ci"><svg class="ico"><use href="#i-zalo"/></svg></span><span><small>Zalo</small>0982 269 974</span></a></li>
+              <li><a href="tel:0982269974"><span class="ci"><svg class="ico"><use href="#i-phone"/></svg></span><span><small>Điện thoại</small>0982 269 974</span></a></li>
+              <li><a href="mailto:ann079771@gmail.com"><span class="ci"><svg class="ico"><use href="#i-mail"/></svg></span><span><small>Email</small>ann079771@gmail.com</span></a></li>
+              <li><a href="https://github.com/nguyenthean38" target="_blank" rel="noopener"><span class="ci"><svg class="ico"><use href="#i-github"/></svg></span><span><small>GitHub</small>github.com/nguyenthean38</span></a></li>
+            </ul>
+          </div>
+          <form class="cform" id="cform" novalidate>
+            <div class="cform__row">
+              <label class="field"><span>Họ và tên *</span><input name="name" autocomplete="name" required placeholder="Nguyễn Văn A" /></label>
+              <label class="field"><span>Số điện thoại / Zalo *</span><input name="phone" type="tel" autocomplete="tel" required placeholder="09xx xxx xxx" /></label>
+            </div>
+            <div class="field"><span>Anh chị cần làm</span>
+              <div class="chips" id="needChips">
+                <label><input type="checkbox" name="need" value="Website doanh nghiệp" /><span>Website doanh nghiệp</span></label>
+                <label><input type="checkbox" name="need" value="Website bán hàng" /><span>Website bán hàng</span></label>
+                <label><input type="checkbox" name="need" value="Landing page" /><span>Landing page</span></label>
+                <label><input type="checkbox" name="need" value="Web app / phần mềm" /><span>Web app / phần mềm</span></label>
+                <label><input type="checkbox" name="need" value="App di động" /><span>App di động</span></label>
+                <label><input type="checkbox" name="need" value="Chatbot AI / tự động hoá" /><span>Chatbot AI / tự động hoá</span></label>
+              </div>
+            </div>
+            <label class="field"><span>Ngân sách dự kiến</span>
+              <select name="budget">
+                <option value="">Chưa xác định</option>
+                <option>Dưới 5 triệu</option>
+                <option>5 – 10 triệu</option>
+                <option>10 – 20 triệu</option>
+                <option>Trên 20 triệu</option>
+              </select>
+            </label>
+            <label class="field"><span>Mô tả ngắn</span><textarea name="message" id="cMessage" rows="4" placeholder="Ví dụ: Tôi có tiệm cà phê ở Quận 3, muốn website có menu, đặt bàn online và nút gọi Zalo…"></textarea></label>
+            <button class="btn btn--brand btn--lg btn--block" type="submit" data-magnetic><span>Gửi yêu cầu tư vấn</span><svg class="ico"><use href="#i-send"/></svg></button>
+            <p class="cform__hint">Tin nhắn được soạn sẵn để anh chị gửi qua Zalo hoặc email — thông tin không lưu trên máy chủ nào.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#top" class="brand brand--light"><svg class="brand__mark" viewBox="0 0 40 40"><use href="#logo-mark"/></svg><span class="brand__name">Ntahien<b>Tech</b></span></a>
+          <p>Từ ý tưởng đến sản phẩm chạy thật. Website, app và tự động hoá AI cho doanh nghiệp Việt.</p>
+          <div class="footer__social">
+            <a href="https://zalo.me/0982269974" target="_blank" rel="noopener" aria-label="Zalo"><svg class="ico"><use href="#i-zalo"/></svg></a>
+            <a href="https://github.com/nguyenthean38" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ico"><use href="#i-github"/></svg></a>
+            <a href="mailto:ann079771@gmail.com" aria-label="Email"><svg class="ico"><use href="#i-mail"/></svg></a>
+            <a href="tel:0982269974" aria-label="Gọi điện"><svg class="ico"><use href="#i-phone"/></svg></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <p class="footer__h">Dịch vụ</p>
+          <a href="#dich-vu">Website doanh nghiệp</a><a href="#dich-vu">Website bán hàng</a><a href="#dich-vu">Landing page</a><a href="#dich-vu">Web app quản lý</a><a href="#dich-vu">App di động</a><a href="#dich-vu">AI &amp; tự động hoá</a>
+        </div>
+        <div class="footer__col">
+          <p class="footer__h">Khám phá</p>
+          <a href="#du-an">Dự án tiêu biểu</a><a href="#quy-trinh">Quy trình</a><a href="#bang-gia">Bảng giá</a><a href="#uoc-tinh">Ước tính chi phí</a><a href="#faq">Hỏi đáp</a><a href="#gioi-thieu">Về tôi</a>
+        </div>
+        <div class="footer__col">
+          <p class="footer__h">Liên hệ</p>
+          <a href="tel:0982269974"><svg class="ico"><use href="#i-phone"/></svg>0982 269 974</a>
+          <a href="mailto:ann079771@gmail.com"><svg class="ico"><use href="#i-mail"/></svg>ann079771@gmail.com</a>
+          <span><svg class="ico"><use href="#i-pin"/></svg>TP. Hồ Chí Minh · phục vụ toàn quốc</span>
+          <span><svg class="ico"><use href="#i-clock"/></svg>8:00 – 22:00, cả tuần</span>
+        </div>
+      </div>
+      <div class="footer__giant" aria-hidden="true">NTAHIEN<span>TECH</span></div>
+      <div class="footer__bottom">
+        <span>© <span id="year">2026</span> Ntahien Tech · Nguyễn Thế An</span>
+        <span>Thiết kế &amp; lập trình bởi chính tôi ✦</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Nút liên hệ nổi -->
+  <div class="floating">
+    <a class="fab fab--zalo" href="https://zalo.me/0982269974" target="_blank" rel="noopener" aria-label="Nhắn Zalo"><svg class="ico"><use href="#i-zalo"/></svg></a>
+    <a class="fab fab--call" href="tel:0982269974" aria-label="Gọi điện"><svg class="ico"><use href="#i-phone"/></svg></a>
+  </div>
+  <button class="totop" id="toTop" type="button" aria-label="Lên đầu trang">
+    <svg class="totop__ring" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22"/><circle cx="24" cy="24" r="22" id="toTopRing"/></svg>
+    <svg class="ico"><use href="#i-arrow-up"/></svg>
+  </button>
+
+  <!-- Hộp chi tiết dự án -->
+  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel" role="document">
+      <button class="modal__close" type="button" data-close aria-label="Đóng"><svg class="ico"><use href="#i-x"/></svg></button>
+      <div class="modal__content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- Hộp gửi tin -->
+  <div class="modal modal--sm" id="sendModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="sendTitle">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel" role="document">
+      <button class="modal__close" type="button" data-close aria-label="Đóng"><svg class="ico"><use href="#i-x"/></svg></button>
+      <div class="send">
+        <div class="send__ok"><svg class="ico"><use href="#i-check"/></svg></div>
+        <h3 id="sendTitle">Tin nhắn đã sẵn sàng!</h3>
+        <p>Chọn cách gửi thuận tiện nhất. Với Zalo, nội dung đã được sao chép — chỉ cần dán vào ô chat.</p>
+        <pre class="send__msg" id="sendMsg"></pre>
+        <div class="send__actions">
+          <a class="btn btn--brand" id="sendZalo" href="https://zalo.me/0982269974" target="_blank" rel="noopener"><svg class="ico"><use href="#i-zalo"/></svg><span>Gửi qua Zalo</span></a>
+          <a class="btn btn--dark" id="sendMail" href="mailto:ann079771@gmail.com"><svg class="ico"><use href="#i-mail"/></svg><span>Gửi qua Email</span></a>
+          <button class="btn btn--ghost" id="sendCopy" type="button"><svg class="ico"><use href="#i-copy"/></svg><span>Sao chép</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/data.js?v=3"></script>
+  <script src="assets/js/cursor.js?v=3"></script>
+  <script src="assets/js/main.js?v=3"></script>
+</body>
+</html>
