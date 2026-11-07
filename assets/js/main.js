@@ -32,31 +32,10 @@
     }).join(' ');
   });
 
-  /* ---------- Màn hình tải ---------- */
-  (function loader() {
-    var el = $('#loader'), num = $('#loaderNum'), bar = $('#loaderBar');
-    var start = performance.now(), loaded = document.readyState === 'complete', shown = 0, done = false;
-    window.addEventListener('load', function () { loaded = true; });
-    setTimeout(function () { loaded = true; }, 3500); // không bắt khách chờ quá lâu
-    function finish() {
-      if (done) return; done = true;
-      el.classList.add('is-done');
-      setTimeout(function () { body.classList.add('is-ready'); root.classList.add('is-ready'); }, 250);
-      setTimeout(function () { el.remove(); }, 1600);
-    }
-    if (reduce) { finish(); return; }
-    function tick(now) {
-      var t = now - start;
-      var target = loaded ? 100 : Math.min(90, t / 12);
-      shown += (target - shown) * (loaded ? 0.18 : 0.08);
-      if (loaded && t > 700 && shown > 99.2) shown = 100;
-      num.textContent = Math.floor(shown);
-      bar.style.width = shown + '%';
-      if (shown >= 100) { setTimeout(finish, 150); return; }
-      requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  })();
+  /* ---------- Vào thẳng trang: chữ tiêu đề hiện lên ngay ---------- */
+  requestAnimationFrame(function () {
+    requestAnimationFrame(function () { body.classList.add('is-ready'); root.classList.add('is-ready'); });
+  });
 
   /* ---------- Giao diện sáng / tối ---------- */
   $('#themeBtn').addEventListener('click', function () {
