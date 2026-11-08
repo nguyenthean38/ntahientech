@@ -95,6 +95,7 @@ window.SITE = {
       ],
       tech: ['React 19', 'Tailwind CSS v4', 'Vite', 'Zustand', 'SVG Charts'],
       links: [
+        { label: 'Xem trực tiếp', url: 'https://mecury.vercel.app' },
         { label: 'Mã nguồn', url: 'https://github.com/nguyenthean38/Mecury' }
       ]
     },
