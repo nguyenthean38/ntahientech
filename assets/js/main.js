@@ -123,9 +123,33 @@
       else items.push({ src: p.shots[0], title: p.title });
     });
     var html = items.map(function (it) {
-      return '<a class="shot' + (it.phone ? ' shot--phone' : '') + '" href="#du-an" data-cursor="Xem" tabindex="-1"><img src="' + it.src + '" alt="Giao diện ' + esc(it.title) + '" loading="lazy" /><span class="shot__label">' + esc(it.title) + '</span></a>';
+      return '<a class="shot' + (it.phone ? ' shot--phone' : '') + '" href="#du-an" data-cursor="Xem" tabindex="-1"><span class="shot__inner"><img src="' + it.src + '" alt="Giao diện ' + esc(it.title) + '" loading="lazy" /><span class="shot__label">' + esc(it.title) + '</span></span></a>';
     }).join('');
     track.innerHTML = html + html.replace(/alt="[^"]*"/g, 'alt=""');
+
+    // Chạy bằng JS để khi rê chuột thì giảm tốc êm rồi dừng hẳn, rời chuột thì tăng tốc lại
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var box = track.parentNode, BASE = 'rotateX(18deg) rotateZ(-3deg) ';
+    var x = 0, v = 0, hover = false, visible = true, last = 0, half = 0;
+    function measure() { half = track.scrollWidth / 2; }
+    measure();
+    window.addEventListener('resize', measure);
+    window.addEventListener('load', measure);
+    box.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') hover = true; });
+    box.addEventListener('pointerleave', function () { hover = false; });
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }).observe(box);
+    function frame(t) {
+      var dt = last ? Math.min(t - last, 50) / 1000 : 0; last = t;
+      if (visible && !document.hidden && half) {
+        var speed = half / 55;                       // hết một vòng trong 55 giây
+        v += ((hover ? 0 : speed) - v) * Math.min(1, dt * (hover ? 7 : 2.5));
+        if (v < 0.5 && hover) v = 0;
+        x = (x + v * dt) % half;
+        track.style.transform = BASE + 'translate3d(' + (-x).toFixed(2) + 'px,0,0)';
+      }
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
   })();
 
   /* ---------- Thẻ dịch vụ sống động ---------- */
