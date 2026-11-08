@@ -312,7 +312,7 @@
       if (!live) return;
       var host = live.url.replace(/^https?:\/\//, '').replace(/\/$/, '');
       // địa chỉ riêng cho khung nhúng, tránh trình duyệt dùng lại bản lưu cũ còn chặn nhúng
-      var embedUrl = live.url + (live.url.indexOf('?') > -1 ? '&' : '?') + 'from=ntahientech';
+      var embedUrl = live.url + (live.url.indexOf('?') > -1 ? '&' : '?') + 'from=ntahientech&t=' + Date.now().toString(36);
       m.classList.add('is-live');
       stage.innerHTML = '<div class="pm-live">' +
         '<div class="pm-live__bar"><span class="pm-live__dots" aria-hidden="true"><i></i><i></i><i></i></span>' +
