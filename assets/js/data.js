@@ -77,6 +77,28 @@ window.SITE = {
       ]
     },
     {
+      id: 'nep',
+      title: 'Nếp — Thời trang mỗi ngày',
+      kind: 'Website thương mại điện tử thời trang',
+      cat: ['shop', 'web'],
+      year: '2026',
+      cover: 'assets/img/projects/nep.webp',
+      shots: ['assets/img/projects/nep.webp', 'assets/img/projects/nep-2.webp', 'assets/img/projects/nep-3.webp'],
+      accent: '#24357a',
+      summary: 'Cửa hàng thời trang trực tuyến tiếng Việt cho nữ, nam, trẻ em, đồ nhà và làm đẹp: hơn 100 sản phẩm, giỏ hàng, thanh toán, thành viên tích điểm và hệ thống cửa hàng trên bản đồ. Dữ liệu chạy qua lớp API mô phỏng, sẵn sàng nối backend.',
+      features: [
+        'Danh mục có bộ lọc giá, màu, size, chất liệu, đếm kết quả trực tiếp và lọc “nhận hôm nay tại cửa hàng”',
+        'Trang sản phẩm có gợi ý size theo chiều cao và cân nặng, báo khi có hàng, đánh giá kèm độ vừa vặn',
+        'Thanh toán COD, thẻ, ví điện tử, VietQR, trả góp; giao hoả tốc 2 giờ hoặc nhận tại cửa hàng',
+        'Nếp Club hạng Sợi, Vải, Lụa; đơn hàng, huỷ đơn, theo dõi đơn, địa chỉ theo 34 tỉnh thành mới',
+        'Bản đồ 14 cửa hàng, chương trình “Đổi cũ lấy mới”, tìm kiếm không dấu'
+      ],
+      tech: ['React 19', 'Tailwind CSS v4', 'Vite', 'TanStack Query', 'Zustand', 'Leaflet'],
+      links: [
+        { label: 'Mã nguồn', url: 'https://github.com/nguyenthean38/H-M' }
+      ]
+    },
+    {
       id: 'tanthoi',
       title: 'Tân Thời — Báo điện tử',
       kind: 'Trang tin tức tiếng Việt kèm trò chơi chữ',
