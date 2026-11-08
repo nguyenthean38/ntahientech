@@ -95,6 +95,7 @@ window.SITE = {
       ],
       tech: ['React 19', 'Tailwind CSS v4', 'Vite', 'TanStack Query', 'Zustand', 'Leaflet'],
       links: [
+        { label: 'Xem trực tiếp', url: 'https://hms-beryl-rho.vercel.app' },
         { label: 'Mã nguồn', url: 'https://github.com/nguyenthean38/H-M' }
       ]
     },
