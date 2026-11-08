@@ -77,6 +77,28 @@ window.SITE = {
       ]
     },
     {
+      id: 'tanthoi',
+      title: 'Tân Thời — Báo điện tử',
+      kind: 'Trang tin tức tiếng Việt kèm trò chơi chữ',
+      cat: ['web', 'app'],
+      year: '2026',
+      cover: 'assets/img/projects/tanthoi.webp',
+      shots: ['assets/img/projects/tanthoi.webp', 'assets/img/projects/tanthoi-2.webp', 'assets/img/projects/tanthoi-3.webp'],
+      accent: '#c8331f',
+      summary: 'Trang báo điện tử tiếng Việt đầy đủ: trang nhất kiểu báo in, bài viết có giọng đọc, tin trực tiếp, bình luận, podcast, video dạng truyện dọc, bản tin email và trò chơi chữ tiếng Việt.',
+      features: [
+        'Trang nhất kiểu báo in, ngày âm lịch trên măng-sét, menu chuyên mục thả xuống, chế độ sáng / tối',
+        'Bài viết nghe được bằng giọng đọc tiếng Việt, tặng bài, lưu bài, chỉnh cỡ chữ, tin trực tiếp, công thức nấu ăn',
+        'Bình luận có duyệt, trả lời, thích, báo cáo; tìm kiếm không dấu với bộ lọc',
+        'Trò chơi: Chữ Ẩn (đoán từ tiếng Việt), Bộ Tứ, Sudoku, tự tạo câu đố gửi bạn bè',
+        'Tài khoản, gói đọc, thanh toán thử nghiệm, huỷ gói — toàn bộ chạy trên trình duyệt'
+      ],
+      tech: ['React 19', 'Tailwind CSS v4', 'Vite', 'Zustand', 'Web Speech API'],
+      links: [
+        { label: 'Mã nguồn', url: 'https://github.com/nguyenthean38/newyork-time' }
+      ]
+    },
+    {
       id: 'mach',
       title: 'Mạch — Tài chính doanh nghiệp',
       kind: 'Web app quản lý tài chính doanh nghiệp',
