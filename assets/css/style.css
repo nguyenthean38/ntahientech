@@ -791,6 +791,49 @@ input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; border-radius
 .pm-links { display: grid; gap: 8px; }
 .pm-links .btn { width: 100%; }
 .pm-note { font-size: 13.5px; color: var(--muted); }
+/* Dùng thử bản demo ngay trong hộp thoại */
+.pm-stage { position: relative; }
+.pm-try { position: absolute; right: 16px; bottom: 16px; z-index: 3; display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px; border-radius: 999px; background: var(--grad); color: #fff; font-weight: 700; font-size: 14px; box-shadow: 0 12px 26px -10px rgba(22, 181, 107, .7); transition: transform .3s var(--ease); }
+.pm-try:hover { transform: translateY(-2px); }
+.pm-try .ico { width: 18px; height: 18px; }
+.pm-ext { display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-size: 13.5px; font-weight: 600; color: var(--muted); padding: 2px 0 6px; }
+.pm-ext:hover { color: var(--brand-ink); }
+.pm-ext .ico { width: 14px; height: 14px; }
+.modal.is-live .modal__panel { width: min(1320px, 100%); }
+.pm-live { background: var(--bg-2); padding: 12px 12px 10px; }
+.pm-live__bar { display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 64px 0 8px; }
+.pm-live__dots { display: flex; gap: 6px; flex: none; }
+.pm-live__dots i { width: 11px; height: 11px; border-radius: 50%; background: #ff5f57; }
+.pm-live__dots i:nth-child(2) { background: #febc2e; } .pm-live__dots i:nth-child(3) { background: #28c840; }
+.pm-live__url { flex: 1; min-width: 0; display: flex; align-items: center; gap: 8px; height: 32px; padding: 0 14px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+.pm-live__url span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pm-live__url .ico { width: 14px; height: 14px; flex: none; color: var(--brand); }
+.pm-live__tools { display: flex; align-items: center; gap: 4px; flex: none; }
+.pm-live__tools > * { height: 34px; min-width: 34px; padding: 0 8px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; color: var(--ink-2); font-size: 13px; font-weight: 700; transition: background-color .2s, color .2s; }
+.pm-live__tools > *:hover { background: var(--surface); }
+.pm-live__tools > .is-active { background: var(--surface); color: var(--brand-ink); box-shadow: var(--shadow-sm); }
+.pm-live__tools .ico { width: 17px; height: 17px; }
+.pm-live__back { margin-left: 4px; border: 1px solid var(--line); }
+.pm-live__view { display: flex; justify-content: center; }
+.pm-live__screen { position: relative; width: 100%; height: min(76vh, 820px); border-radius: 14px; overflow: hidden; background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow-sm); transition: width .5s var(--ease), border-radius .5s; }
+.pm-live__view.is-mobile .pm-live__screen { width: 390px; max-width: 100%; border-radius: 34px; border: 8px solid #0a1714; }
+.pm-live__screen iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #fff; }
+.pm-live__loading { position: absolute; inset: 0; z-index: 1; display: grid; place-content: center; justify-items: center; gap: 12px; background: var(--surface); color: var(--muted); font-size: 14px; font-weight: 600; transition: opacity .4s, visibility .4s; }
+.pm-live__loading.is-done { opacity: 0; visibility: hidden; }
+.pm-live__spin { width: 34px; height: 34px; border-radius: 50%; border: 3px solid var(--line); border-top-color: var(--brand); animation: pmSpin .8s linear infinite; }
+@keyframes pmSpin { to { transform: rotate(360deg); } }
+.pm-live__slow { display: none; align-items: center; gap: 6px; color: var(--brand-ink); }
+.pm-live__slow .ico { width: 14px; height: 14px; }
+.pm-live__loading.is-slow .pm-live__slow { display: inline-flex; }
+.pm-live__note { text-align: center; font-size: 12.5px; color: var(--muted); padding-top: 8px; }
+@media (max-width: 700px) {
+  .pm-live { padding: 8px 6px 8px; }
+  .pm-live__bar { padding-right: 56px; gap: 8px; }
+  .pm-live__dots, .pm-live__url, [data-dev] { display: none !important; }
+  .pm-live__tools { flex: 1; }
+  .pm-live__screen { height: 72vh; }
+  .pm-try { right: 10px; bottom: 10px; height: 36px; font-size: 13px; padding: 0 12px; }
+}
 .send { padding: 36px 30px 30px; text-align: center; }
 .send__ok { width: 64px; height: 64px; margin: 0 auto 18px; border-radius: 50%; display: grid; place-items: center; background: var(--grad); color: #fff; animation: pop .6s var(--ease); }
 .send__ok .ico { width: 30px; height: 30px; stroke-width: 3; }

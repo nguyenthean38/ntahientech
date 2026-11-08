@@ -243,6 +243,8 @@
     m.setAttribute('aria-hidden', 'true');
     if (!$('.modal.is-open') && !body.classList.contains('menu-open')) body.classList.remove('is-locked');
     if (lastFocus && lastFocus.focus) lastFocus.focus();
+    // tắt bản demo đang chạy khi đóng hộp thoại
+    if (m.id === 'modal') setTimeout(function () { if (!m.classList.contains('is-open')) { var fr = $('iframe', m); if (fr) fr.remove(); } }, 450);
   }
   $$('.modal').forEach(function (m) {
     m.addEventListener('click', function (e) { if (e.target.closest('[data-close]')) closeModal(m); });
@@ -270,9 +272,17 @@
         (shots.length > 1 ? '<button type="button" class="pm-gallery__nav pm-gallery__nav--prev" aria-label="Ảnh trước">' + icon('i-chev-l') + '</button><button type="button" class="pm-gallery__nav pm-gallery__nav--next" aria-label="Ảnh sau">' + icon('i-chev-r') + '</button>' : '') +
         '</div>' + (shots.length > 1 ? '<div class="pm-thumbs">' + shots.map(function (s, i) { return '<button type="button" class="' + (i ? '' : 'is-active') + '" data-i="' + i + '" aria-label="Ảnh ' + (i + 1) + '"><img src="' + s + '" alt="" /></button>'; }).join('') + '</div>' : '');
     }
+    var live = (p.links || []).filter(function (l) { return /trực tiếp/i.test(l.label) && /^https:\/\//.test(l.url); })[0];
+    if (live) gallery += '<button type="button" class="pm-try" data-live>' + icon('i-eye') + '<span>Dùng thử ngay tại đây</span></button>';
     var links = (p.links || []).map(function (l, i) {
+      if (l === live) {
+        return '<button type="button" class="btn btn--brand" data-live>' + icon('i-eye') + '<span>Dùng thử ngay tại đây</span></button>' +
+          '<a class="pm-ext" href="' + l.url + '" target="_blank" rel="noopener">hoặc mở trong tab mới ' + icon('i-arrow-ur') + '</a>';
+      }
       return '<a class="btn ' + (i ? 'btn--ghost' : 'btn--brand') + '" href="' + l.url + '" target="_blank" rel="noopener">' + (/mã nguồn/i.test(l.label) ? icon('i-github') : icon('i-globe')) + '<span>' + esc(l.label) + '</span>' + icon('i-arrow-ur') + '</a>';
     }).join('');
+    gallery = '<div class="pm-stage">' + gallery + '</div>';
+    $('#modal').classList.remove('is-live');
     $('#modalContent').innerHTML = gallery +
       '<div class="pm-body"><div><p class="proj__kind">' + esc(p.kind) + ' · ' + p.year + '</p><h2 id="modalTitle">' + esc(p.title) + '</h2><p class="lead">' + esc(p.summary) + '</p>' +
       '<ul class="pm-feat">' + p.features.map(function (f) { return '<li>' + esc(f) + '</li>'; }).join('') + '</ul></div>' +
@@ -281,15 +291,60 @@
       '<a class="btn btn--dark" href="#lien-he" data-close-go>' + icon('i-zalo', 'ico--zalo') + '<span>Tôi muốn làm tương tự</span></a></div></aside></div>';
     var cur = 0, img = $('#pmImg');
     function go(i) {
+      img = $('#pmImg'); if (!img) return;
       cur = (i + shots.length) % shots.length;
       img.src = shots[cur];
       img.style.animation = 'none'; void img.offsetWidth; img.style.animation = '';
       $$('.pm-thumbs button').forEach(function (b, j) { b.classList.toggle('is-active', j === cur); });
     }
     var m = $('#modal');
-    $$('.pm-gallery__nav--prev', m).forEach(function (b) { b.onclick = function () { go(cur - 1); }; });
-    $$('.pm-gallery__nav--next', m).forEach(function (b) { b.onclick = function () { go(cur + 1); }; });
-    $$('.pm-thumbs button', m).forEach(function (b) { b.onclick = function () { go(+b.getAttribute('data-i')); }; });
+    var stage = $('.pm-stage', m), stageHTML = stage.innerHTML;
+    function bindGallery() {
+      cur = 0;
+      $$('.pm-gallery__nav--prev', m).forEach(function (b) { b.onclick = function () { go(cur - 1); }; });
+      $$('.pm-gallery__nav--next', m).forEach(function (b) { b.onclick = function () { go(cur + 1); }; });
+      $$('.pm-thumbs button', m).forEach(function (b) { b.onclick = function () { go(+b.getAttribute('data-i')); }; });
+    }
+    bindGallery();
+
+    // Xem bản demo chạy thật ngay trong hộp thoại (iframe)
+    function showLive() {
+      if (!live) return;
+      var host = live.url.replace(/^https?:\/\//, '').replace(/\/$/, '');
+      // địa chỉ riêng cho khung nhúng, tránh trình duyệt dùng lại bản lưu cũ còn chặn nhúng
+      var embedUrl = live.url + (live.url.indexOf('?') > -1 ? '&' : '?') + 'from=ntahientech';
+      m.classList.add('is-live');
+      stage.innerHTML = '<div class="pm-live">' +
+        '<div class="pm-live__bar"><span class="pm-live__dots" aria-hidden="true"><i></i><i></i><i></i></span>' +
+        '<span class="pm-live__url">' + icon('i-shield') + '<span>' + esc(host) + '</span></span>' +
+        '<span class="pm-live__tools">' +
+        '<button type="button" class="is-active" data-dev="desktop" aria-label="Xem dạng máy tính" title="Máy tính">' + icon('i-dashboard') + '</button>' +
+        '<button type="button" data-dev="mobile" aria-label="Xem dạng điện thoại" title="Điện thoại">' + icon('i-phone-dev') + '</button>' +
+        '<button type="button" data-reload aria-label="Tải lại" title="Tải lại">' + icon('i-refresh') + '</button>' +
+        '<a href="' + live.url + '" target="_blank" rel="noopener" aria-label="Mở trong tab mới" title="Mở tab mới">' + icon('i-arrow-ur') + '</a>' +
+        '<button type="button" class="pm-live__back" data-back>' + icon('i-chev-l') + '<span>Ảnh chụp</span></button>' +
+        '</span></div>' +
+        '<div class="pm-live__view"><div class="pm-live__screen">' +
+        '<div class="pm-live__loading"><span class="pm-live__spin"></span><span>Đang mở bản demo…</span>' +
+        '<a class="pm-live__slow" href="' + live.url + '" target="_blank" rel="noopener">Không hiện? Mở trong tab mới ' + icon('i-arrow-ur') + '</a></div>' +
+        '<iframe src="' + embedUrl + '" title="Bản demo ' + esc(p.title) + '" allow="clipboard-write; fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe>' +
+        '</div></div>' +
+        '<p class="pm-live__note">Bản chạy thật, dữ liệu mẫu — anh chị bấm thử thoải mái.</p></div>';
+      var view = $('.pm-live__view', stage), fr = $('iframe', stage), loading = $('.pm-live__loading', stage);
+      var slow = setTimeout(function () { loading.classList.add('is-slow'); }, 8000);
+      fr.addEventListener('load', function () { clearTimeout(slow); loading.classList.add('is-done'); });
+      $$('[data-dev]', stage).forEach(function (b) {
+        b.onclick = function () {
+          $$('[data-dev]', stage).forEach(function (x) { x.classList.toggle('is-active', x === b); });
+          view.classList.toggle('is-mobile', b.getAttribute('data-dev') === 'mobile');
+        };
+      });
+      $('[data-reload]', stage).onclick = function () { loading.classList.remove('is-done'); fr.src = embedUrl; };
+      $('[data-back]', stage).onclick = function () { m.classList.remove('is-live'); stage.innerHTML = stageHTML; bindGallery(); bindTry(); };
+      $('.modal__panel', m).scrollTop = 0;
+    }
+    function bindTry() { $$('[data-live]', m).forEach(function (b) { b.onclick = showLive; }); }
+    bindTry();
     var goBtn = $('[data-close-go]', m);
     goBtn.addEventListener('click', function () {
       closeModal(m);
