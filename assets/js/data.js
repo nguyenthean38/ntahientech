@@ -77,6 +77,28 @@ window.SITE = {
       ]
     },
     {
+      id: 'mach',
+      title: 'Mạch — Tài chính doanh nghiệp',
+      kind: 'Web app quản lý tài chính doanh nghiệp',
+      cat: ['app', 'ai'],
+      year: '2026',
+      cover: 'assets/img/projects/mach.webp',
+      shots: ['assets/img/projects/mach.webp', 'assets/img/projects/mach-2.webp', 'assets/img/projects/mach-3.webp'],
+      accent: '#138f66',
+      summary: 'Phần mềm quản lý tài chính cho doanh nghiệp vừa và nhỏ: kết nối tài khoản ngân hàng công ty, duyệt chi, quản lý thẻ, xuất hoá đơn GTGT và sổ sách kế toán trong một nơi.',
+      features: [
+        'Tổng quan dòng tiền, bảng giao dịch có bộ lọc, phân loại hàng loạt, xuất CSV',
+        'Lệnh chi duyệt nhiều cấp có OTP, uỷ nhiệm chi và VietQR',
+        'Quản lý thẻ doanh nghiệp, ngân sách nhóm, hoàn ứng',
+        'Hoá đơn bán ra xem trước trực tiếp, kế toán theo Thông tư 200',
+        'Trợ lý AI trả lời về dòng tiền, bảng lệnh Ctrl K, giao diện sáng/tối'
+      ],
+      tech: ['React 19', 'Tailwind CSS v4', 'Vite', 'Zustand', 'SVG Charts'],
+      links: [
+        { label: 'Mã nguồn', url: 'https://github.com/nguyenthean38/Mecury' }
+      ]
+    },
+    {
       id: 'nhip',
       title: 'Nhịp — Đầu tư',
       kind: 'Web app nghiên cứu cổ phiếu',
