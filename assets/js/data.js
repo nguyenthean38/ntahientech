@@ -77,6 +77,28 @@ window.SITE = {
       ]
     },
     {
+      id: 'lacviet',
+      title: 'Lạc Việt Data — Dữ liệu & AI',
+      kind: 'Hệ thống dữ liệu & AI cho doanh nghiệp',
+      cat: ['app', 'ai'],
+      year: '2026',
+      cover: 'assets/img/projects/lacviet.webp',
+      shots: ['assets/img/projects/lacviet.webp', 'assets/img/projects/lacviet-2.webp', 'assets/img/projects/lacviet-3.webp', 'assets/img/projects/lacviet-4.webp'],
+      accent: '#5b46e5',
+      summary: 'Nền tảng dữ liệu đám mây kèm AI, làm hoàn toàn bằng tiếng Việt: viết SQL chạy thật ngay trên trình duyệt, hỏi dữ liệu bằng tiếng Việt để AI tự viết truy vấn và vẽ biểu đồ, dựng tác tử AI, giám sát truy vấn và chi phí. Dữ liệu mẫu là một chuỗi cà phê hư cấu với khoảng 14.000 đơn hàng.',
+      features: [
+        'Trình soạn SQL có gợi ý tên bảng, chạy thật bằng SQLite WebAssembly, bảng kết quả có thống kê từng cột và biểu đồ',
+        'Hỏi dữ liệu bằng tiếng Việt: trợ lý Tinh Ý hiểu tỉnh thành, tháng, quý, top N… rồi viết SQL, chạy và viết nhận định',
+        'Hàm AI ngay trong SQL đọc cảm xúc, phân loại chủ đề đánh giá khách hàng tiếng Việt',
+        'Tải CSV thành bảng, chợ dữ liệu, ứng dụng dữ liệu chạy trên SQL, lịch sử phiên bản tệp SQL',
+        'Lịch sử truy vấn, kho tính toán, chi phí, người dùng & phân quyền, MFA, giao diện sáng / tối'
+      ],
+      tech: ['React 19', 'Tailwind CSS v4', 'Vite', 'SQLite WASM', 'CodeMirror 6', 'Zustand'],
+      links: [
+        { label: 'Mã nguồn', url: 'https://github.com/nguyenthean38/snowfake' }
+      ]
+    },
+    {
       id: 'nep',
       title: 'Nếp — Thời trang mỗi ngày',
       kind: 'Website thương mại điện tử thời trang',
