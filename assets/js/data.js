@@ -95,6 +95,7 @@ window.SITE = {
       ],
       tech: ['React 19', 'Tailwind CSS v4', 'Vite', 'React Router 7', 'Zustand'],
       links: [
+        { label: 'Xem trực tiếp', url: 'https://buymeaflower.vercel.app' },
         { label: 'Mã nguồn', url: 'https://github.com/nguyenthean38/buymeaflower' }
       ]
     },
