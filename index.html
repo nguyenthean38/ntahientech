@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css?v=6" />
+  <link rel="stylesheet" href="assets/css/style.css?v=7" />
   <script>
     /* Áp dụng giao diện sáng/tối trước khi vẽ trang để không bị nháy */
     (function () { try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {} })();
@@ -97,7 +97,7 @@
   </svg>
 
   <!-- Hiệu ứng con trỏ -->
-  <canvas class="fx-field" id="fxField" aria-hidden="true"></canvas>
+  <canvas class="ribbons" id="ribbons" aria-hidden="true"></canvas>
   <div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__label" id="cursorLabel"></span></div>
   <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
   <div class="sparkles" id="sparkles" aria-hidden="true"></div>
@@ -717,7 +717,7 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script src="assets/js/data.js?v=13"></script>
-  <script src="assets/js/cursor.js?v=3"></script>
+  <script src="assets/js/cursor.js?v=4"></script>
   <script src="assets/js/main.js?v=8"></script>
 </body>
 </html>

@@ -142,32 +142,24 @@ mark.hl::before { content: ''; position: absolute; left: -.08em; right: -.08em; 
 @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
 /* ---------- Con trỏ ---------- */
-.fx-field { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 60; }
+.ribbons { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 60; transition: opacity .8s; }
 .cursor, .cursor-dot { position: fixed; left: 0; top: 0; pointer-events: none; z-index: 9990; opacity: 0; will-change: transform; }
 .has-cursor .cursor, .has-cursor .cursor-dot { opacity: 1; }
-/* Khung ngắm 4 góc */
-.cursor { --c: var(--brand); --L: 9px; width: 34px; height: 34px; margin: -17px 0 0 -17px; display: grid; place-items: center; border-radius: 4px;
-  background:
-    linear-gradient(var(--c), var(--c)) top left / var(--L) 2px no-repeat, linear-gradient(var(--c), var(--c)) top left / 2px var(--L) no-repeat,
-    linear-gradient(var(--c), var(--c)) top right / var(--L) 2px no-repeat, linear-gradient(var(--c), var(--c)) top right / 2px var(--L) no-repeat,
-    linear-gradient(var(--c), var(--c)) bottom left / var(--L) 2px no-repeat, linear-gradient(var(--c), var(--c)) bottom left / 2px var(--L) no-repeat,
-    linear-gradient(var(--c), var(--c)) bottom right / var(--L) 2px no-repeat, linear-gradient(var(--c), var(--c)) bottom right / 2px var(--L) no-repeat;
-  transition: width .4s var(--ease), height .4s var(--ease), margin .4s var(--ease), border-radius .4s var(--ease), opacity .3s; }
-.cursor-dot { width: 4px; height: 4px; margin: -2px 0 0 -2px; background: var(--brand); transition: opacity .3s; }
-.cursor.is-hover { --c: var(--brand-2); --L: 12px; width: 58px; height: 58px; margin: -29px 0 0 -29px; }
-.cursor.is-hover::after { content: ''; position: absolute; inset: 8px; border-radius: 3px; background: rgba(14, 165, 233, .1); }
-.cursor.is-view { width: 92px; height: 92px; margin: -46px 0 0 -46px; border-radius: 50%; background: var(--ink); }
-.cursor.is-down { --L: 14px; width: 26px; height: 26px; margin: -13px 0 0 -13px; }
+.cursor { width: 40px; height: 40px; margin: -20px 0 0 -20px; border-radius: 50%; border: 1.5px solid var(--brand); display: grid; place-items: center; transition: width .35s var(--ease), height .35s var(--ease), margin .35s var(--ease), background-color .35s, border-color .35s, opacity .3s; }
+.cursor-dot { width: 6px; height: 6px; margin: -3px 0 0 -3px; border-radius: 50%; background: var(--brand); transition: opacity .3s, transform .1s; }
+.cursor.is-hover { width: 64px; height: 64px; margin: -32px 0 0 -32px; background: rgba(22, 181, 107, .12); border-color: transparent; }
+.cursor.is-view { width: 96px; height: 96px; margin: -48px 0 0 -48px; background: var(--ink); border-color: transparent; }
+.cursor.is-down { transform: scale(.85); }
 .cursor__label { font-size: 13px; font-weight: 700; color: var(--bg); opacity: 0; transform: scale(.6); transition: opacity .25s, transform .35s var(--ease); white-space: nowrap; }
 .cursor.is-view .cursor__label { opacity: 1; transform: scale(1); }
 .cursor.is-hidden, .cursor-dot.is-hidden { opacity: 0 !important; }
 .cursor-dot.is-hover { opacity: 0; }
-.click-wave { position: fixed; pointer-events: none; z-index: 9989; width: 14px; height: 14px; margin: -7px 0 0 -7px; border: 2px solid var(--brand); border-radius: 3px; animation: wave .65s var(--ease) forwards; }
-@keyframes wave { to { transform: scale(4.5) rotate(45deg); opacity: 0; border-color: var(--brand-2); } }
-/* Ký hiệu code bay lên */
+.click-burst { position: fixed; pointer-events: none; z-index: 9989; width: 6px; height: 6px; margin: -3px 0 0 -3px; border-radius: 50%; background: var(--brand); animation: burst .7s var(--ease) forwards; }
+@keyframes burst { to { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; } }
 .sparkles { position: fixed; inset: 0; pointer-events: none; z-index: 2; overflow: hidden; }
-.sparkle { position: absolute; bottom: -30px; font-family: var(--mono); font-weight: 700; color: var(--brand); opacity: 0; font-size: var(--s, 12px); animation: rise var(--t, 20s) linear var(--dl, 0s) infinite; }
-@keyframes rise { 0% { transform: translateY(0); opacity: 0; } 10% { opacity: .35; } 80% { opacity: .25; } 100% { transform: translateY(-110vh); opacity: 0; } }
+.sparkle { position: absolute; top: -20px; color: var(--brand); opacity: .55; font-size: var(--s, 12px); animation: fall var(--t, 14s) linear var(--dl, 0s) infinite, sway 3s ease-in-out infinite alternate; }
+@keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
+@keyframes sway { from { margin-left: -14px; } to { margin-left: 14px; } }
 
 /* ---------- Thanh điều hướng ---------- */
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 80; padding: 14px 0; transition: transform .5s var(--ease), padding .4s var(--ease); }
@@ -849,12 +841,12 @@ input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; border-radius
 /* ---------- Giảm chuyển động ---------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
-  .fx-field, .sparkles, .cursor, .cursor-dot { display: none !important; }
+  .ribbons, .sparkles, .cursor, .cursor-dot { display: none !important; }
   [data-reveal] { opacity: 1; transform: none; }
   .split-word > span { transform: none; }
 }
 @media (hover: none), (pointer: coarse) {
-  .fx-field, .cursor, .cursor-dot { display: none !important; }
+  .ribbons, .cursor, .cursor-dot { display: none !important; }
 }
 @media (max-width: 640px) {
   .hero { padding-top: calc(var(--nav-h) + 40px); }
