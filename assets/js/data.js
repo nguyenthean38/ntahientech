@@ -77,6 +77,28 @@ window.SITE = {
       ]
     },
     {
+      id: 'buymeaflower',
+      title: 'Buy Me a Flower — Tặng hoa cho nhà sáng tạo',
+      kind: 'Nền tảng ủng hộ nhà sáng tạo nội dung',
+      cat: ['app', 'web'],
+      year: '2026',
+      cover: 'assets/img/projects/buymeaflower.webp',
+      shots: ['assets/img/projects/buymeaflower.webp', 'assets/img/projects/buymeaflower-2.webp', 'assets/img/projects/buymeaflower-3.webp', 'assets/img/projects/buymeaflower-4.webp'],
+      accent: '#e83e7c',
+      summary: 'Nền tảng để khán giả “tặng một bông hoa” ủng hộ nhà sáng tạo Việt, tính bằng tiền đồng: mỗi người có một trang cá nhân để nhận ủng hộ một lần, mở hội viên hằng tháng, bán sản phẩm số và đăng bài riêng cho người ủng hộ. Kèm bảng quản lý thu nhập, tin nhắn và luồng rút tiền về ngân hàng.',
+      features: [
+        'Trang cá nhân có màu chủ đề riêng, ô tặng hoa, mục tiêu gây quỹ, thanh toán bằng mã QR, ví điện tử hoặc thẻ (mô phỏng)',
+        'Hội viên nhiều hạng theo tháng / năm, bài viết và bộ ảnh khoá riêng cho người ủng hộ hoặc hội viên',
+        'Cửa hàng sản phẩm số: tệp tải về, lịch hẹn 1:1, vé sự kiện, nhận vẽ theo yêu cầu, tự chọn mức giá',
+        'Bảng quản lý: thu nhập theo kỳ, biểu đồ, xuất CSV, hoàn tiền, trình soạn bài viết có định dạng và hẹn giờ đăng',
+        'Tin nhắn 1-1 và theo nhóm, trình tạo nút / tiện ích nhúng cho trang web, mã QR, liên kết ngân hàng và rút tiền, giao diện sáng / tối'
+      ],
+      tech: ['React 19', 'Tailwind CSS v4', 'Vite', 'React Router 7', 'Zustand'],
+      links: [
+        { label: 'Mã nguồn', url: 'https://github.com/nguyenthean38/buymeaflower' }
+      ]
+    },
+    {
       id: 'lacviet',
       title: 'Lạc Việt Data — Dữ liệu & AI',
       kind: 'Hệ thống dữ liệu & AI cho doanh nghiệp',
