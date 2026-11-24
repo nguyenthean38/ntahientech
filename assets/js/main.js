@@ -129,7 +129,7 @@
 
     // Chạy bằng JS để khi rê chuột thì giảm tốc êm rồi dừng hẳn, rời chuột thì tăng tốc lại
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var box = track.parentNode, BASE = 'rotateX(18deg) rotateZ(-3deg) ';
+    var box = track.parentNode, BASE = 'rotateX(18deg) ';
     var x = 0, v = 0, hover = false, visible = true, last = 0, half = 0;
     function measure() { half = track.scrollWidth / 2; }
     measure();
